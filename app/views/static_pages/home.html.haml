@@ -1,2 +1,46 @@
-%h1 StaticPages#home
-%p Find me in app/views/static_pages/home.html.erb
+
+%body.text-center
+.cover-container.d-flex.h-100.p-3.mx-auto.flex-column
+  %header.masthead.mb-auto
+    .inner
+      %h3.masthead-brand WorkLark
+      %nav.nav.nav-masthead.justify-content-center
+  %main.inner.cover{:role => "main"}
+    %h1.cover-heading Help me fix peopleOps for startups
+    %p.lead
+      After founding a few startups myself, I've realized something really needs to be automated:
+      = succeed '.' do
+        %strong People Ops
+    %ul.text-left.small
+      %li
+        %em People:
+        founders, employees (full-time, and part-time), contractors, sub-contractors, staff, etc.
+      %li
+        %em Ops:
+        agreements, contracts, compensation plans, performance, reviews, etc.
+    %p.lead
+      %strong Help
+      me
+      %strong fix
+      this tedious, oft-laborous task and I'll give you a
+      = succeed '.' do
+        %strong present
+    %ul.text-left.small
+      %li
+        %em Help:
+        Fill out a small survey to help me get data on what to build.
+      %li
+        %em Fix:
+        Design a tool free for the vast majority of small startups and businesses to handle People Ops.
+      %li
+        %em Present:
+        I'll invite you to the beta. It'll be free for the vast majority of my small users?
+
+
+    %a.btn.btn-lg.btn-secondary{:href => "#"} Help me
+  %footer.mastfoot.mt-auto
+    .inner
+      %p
+        Being made with ❤ by
+        = succeed "." do
+          %a{:href => "https://gilani.me/about"} Amin Shah Gilani
