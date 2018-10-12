@@ -11,6 +11,10 @@ RUN bundle install --binstubs
 COPY package.json yarn.lock ./
 RUN yarn install
 
+ENV RAILS_ENV production
+ENV RACK_ENV production
+ENV RAILS_ROOT /app
+
 COPY . .
 
 LABEL maintainer="Amin Shah Gilani <code@gilani.me>"
