@@ -1,46 +1,90 @@
-
-%body.text-center
-.cover-container.d-flex.h-100.p-3.mx-auto.flex-column
-  %header.masthead.mb-auto
-    .inner
-      %h3.masthead-brand WorkLark
-      %nav.nav.nav-masthead.justify-content-center
-  %main.inner.cover{:role => "main"}
-    %h1.cover-heading Help me fix peopleOps for startups
-    %p.lead
-      After founding a few startups myself, I've realized something really needs to be automated:
-      = succeed '.' do
-        %strong People Ops
-    %ul.text-left.small
-      %li
-        %em People:
-        founders, employees (full-time, and part-time), contractors, sub-contractors, staff, etc.
-      %li
-        %em Ops:
-        agreements, contracts, compensation plans, performance, reviews, etc.
-    %p.lead
-      %strong Help
-      me
-      %strong fix
-      this tedious, oft-laborous task and I'll give you a
-      = succeed '.' do
-        %strong present
-    %ul.text-left.small
-      %li
-        %em Help:
-        Fill out a small survey to help me get data on what to build.
-      %li
-        %em Fix:
-        Design a tool free for the vast majority of small startups and businesses to handle People Ops.
-      %li
-        %em Present:
-        I'll invite you to the beta. It'll be free for the vast majority of my small users?
-
-
-    %a.btn.btn-lg.btn-secondary{:href => "#"} Help me
-  %footer.mastfoot.mt-auto
-    .inner
+/ Header
+%header.navbar
+  .container
+    .navbar-brand
+      %a.navbar-item
+        %img{:alt => "Logo", :src => image_url("logo.png")}/
+      %span.navbar-burger.burger{"data-target" => "navbarMenuHeroC"}
+        %span
+        %span
+        %span
+    #navbarMenuHeroC.navbar-menu
+      .navbar-end
+        %a.navbar-item.is-active
+          Home
+        %a.navbar-item
+          Pricing
+        %span.navbar-item
+          %a.button.is-primary
+            %span Sign up
+        %span.navbar-item
+          %a.button.is-success
+            %span Sign in
+%section.hero.is-info.is-medium
+  .hero-body
+    .container.has-text-centered
+      %h1.title
+        Essential People Ops tools for your business.
+      %a{href: '#', class: 'button is-primary'}
+        Sign up
+%footer.footer
+  .container
+    .columns
+      .column.is-3
+        .content
+          %p.header
+          %p
+            %a{:href => "https://bulma.io"} Home
+          %p
+            %a{:href => "https://bulma.io/blog"} Blog
+          %p
+            %a{:href => "/2018/06/20/automatic-variables-documentation/"}
+              About
+          %p
+            %a{:href => "/2018/04/14/migration-to-v070/"}
+              Careers
+          %p
+            %a{:href => "/2018/04/13/website-redesign/"}
+              Website redesign
+          %p
+            %a{:href => "/2018/01/18/bulma-supports-font-awesome-5/"}
+              Font Awesome 5
+          %p
+            %a{:href => "https://bulma.io/blog"}
+            View all posts
+      .column.is-3
+        .content
+          %p
+            %a{:href => "https://bulma.io/documentation"} Documentation
+          %p
+            %a{:href => "https://bulma.io/documentation/overview"}
+              Overview
+          %p
+            %a{:href => "https://bulma.io/documentation/customize"}
+              Customize
+          %p
+            %a{:href => "https://bulma.io/documentation/modifiers"}
+              Modifiers
+          %p
+            %a{:href => "https://bulma.io/documentation/columns"}
+              Columns
+          %p
+            %a{:href => "https://bulma.io/documentation/layout"}
+              Layout
+          %p
+            %a{:href => "https://bulma.io/documentation/form"}
+              Form
+          %p
+            %a{:href => "https://bulma.io/documentation/elements"}
+              Elements
+          %p
+            %a{:href => "https://bulma.io/documentation/components"}
+              Components
+    .content.has-text-centered
       %p
-        Being made with ❤ by
+        %strong Worklark
+        by
         = succeed "." do
-          %a{:href => "https://gilani.me/about"} Amin Shah Gilani
+          %a{:href => "https://amin.gilani.me"} Amin Shah Gilani
+        = succeed "." do
+          All rights reserved
