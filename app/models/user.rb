@@ -32,7 +32,7 @@
 #
 # Foreign Keys
 #
-#  fk_rails_...  (company_id => companies.id)
+#  fk_rails_...  (company_id => organizations.id)
 #
 
 class User < ApplicationRecord

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: companies
+# Table name: organizations
 #
 #  id         :bigint(8)        not null, primary key
 #  name       :string
@@ -9,8 +9,8 @@
 #
 # Indexes
 #
-#  index_companies_on_name  (name) UNIQUE
+#  index_organizations_on_name  (name) UNIQUE
 #
 
-class Company < ApplicationRecord
+class Organization < ApplicationRecord
 end
