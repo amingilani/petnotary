@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Tag:
+  = @pet.tag
+%p
+  %b Animal type:
+  = @pet.animal_type
+%p
+  %b Animal name:
+  = @pet.animal_name
+%p
+  %b Owner name:
+  = @pet.owner_name
+%p
+  %b Owner email:
+  = @pet.owner_email
+%p
+  %b Owner phone:
+  = @pet.owner_phone
+
+= link_to 'Edit', edit_pet_path(@pet)
+\|
+= link_to 'Back', pets_path

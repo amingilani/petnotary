@@ -10,6 +10,8 @@ RSpec.feature 'organization sign up', type: :feature do
     fill_in 'Animal name', with: 'Spike'
     fill_in 'Owner name', with: 'John Doe'
     fill_in 'Owner email', with: 'owner@example.com'
+    fill_in 'Owner email confirmation', with: 'owner@example.com'
+    fill_in 'Owner email confirmation', with: 'owner@example.com'
     fill_in 'Owner phone', with: '+920000000000'
     click_button 'Save'
 
