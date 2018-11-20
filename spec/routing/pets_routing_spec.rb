@@ -10,6 +10,11 @@ RSpec.describe PetsController, type: :routing do
       expect(:get => "/pets/new").to route_to("pets#new")
     end
 
+    it "routes to #find" do
+      expect(:get => "/pets/find").to route_to("pets#find")
+    end
+
+
     it "routes to #show" do
       expect(:get => "/pets/MyString").to route_to("pets#show", :tag => "MyString")
     end

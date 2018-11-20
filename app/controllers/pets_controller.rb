@@ -6,6 +6,10 @@ class PetsController < ApplicationController
   def index
   end
 
+  def find
+    #code
+  end
+
   # GET /pets/1
   # GET /pets/1.json
   def show

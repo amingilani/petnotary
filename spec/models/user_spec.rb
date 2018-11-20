@@ -21,7 +21,6 @@
 #  phone_primary          :string
 #  phone_secondary        :string
 #  postal_code            :string
-#  privacy_settings       :integer          default(0)
 #  province               :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
@@ -42,5 +41,14 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   it { should accept_nested_attributes_for(:pets) }
-  it { should accept_nested_attributes_for(:profile) }
+
+  it { should validate_presence_of(:email) }
+  it { should validate_presence_of(:name) }
+  it { should validate_presence_of(:phone_primary) }
+  it { should validate_presence_of(:phone_secondary) }
+  it { should validate_presence_of(:postal_code) }
+  it { should validate_presence_of(:province) }
+  it { should validate_presence_of(:address) }
+  it { should validate_presence_of(:city) }
+  it { should validate_presence_of(:country) }
 end

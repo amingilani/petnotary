@@ -145,8 +145,8 @@
           %i.sidebar.icon
         %a.active.item Home
         .right.item
-          %a.ui.inverted.button.green Find an Owner
-          %a.ui.inverted.button Login
+          %a.ui.inverted.button.green{href: pets_find_path} Find an Owner
+          %a.ui.inverted.button{href: new_user_session_path} Login
     .ui.text.container
       %h1.ui.inverted.header
         PetList
@@ -154,7 +154,7 @@
         Pakistan's
         %strong only public
         pet microchip database
-      = form_for(:pets, url: new_pet_path, method: :get, html: {class: 'ui action input'}) do |f|
+      = form_for(:pets, url: new_registration_path(:user), method: :get, html: {class: 'ui action input'}) do |f|
         = f.text_field('Chip ID', placeholder: 'Chip ID', class: 'ui')
         = f.button(class: 'ui huge primary button') do
           Register

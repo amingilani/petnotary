@@ -47,4 +47,14 @@ class User < ApplicationRecord
   has_one :profile
 
   accepts_nested_attributes_for :pets
+
+  validates_presence_of :email
+  validates_presence_of :name
+  validates_presence_of :phone_primary
+  validates_presence_of :phone_secondary
+  validates_presence_of :postal_code
+  validates_presence_of :province
+  validates_presence_of :address
+  validates_presence_of :city
+  validates_presence_of :country
 end
