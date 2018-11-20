@@ -1,4 +1,10 @@
 GIT
+  remote: https://github.com/ajex13/devise-semantified.git
+  revision: 0724fc3bda333d7540f28e1fd60774e116d6fc9c
+  specs:
+    devise-semantified (0.1.2)
+
+GIT
   remote: https://github.com/ctran/annotate_models.git
   revision: 89bce57f2888babd9a620ae7772b5df02ee97516
   specs:
@@ -67,6 +73,8 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.2)
       xpath (~> 3.2)
+    childprocess (0.9.0)
+      ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
@@ -228,6 +236,7 @@ GEM
     ruby_dep (1.5.0)
     ruby_parser (3.11.0)
       sexp_processor (~> 4.9)
+    rubyzip (1.2.2)
     sass (3.5.7)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -239,6 +248,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    selenium-webdriver (3.141.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.2, >= 1.2.2)
     sexp_processor (4.11.0)
     shellany (0.0.1)
     shoulda-matchers (4.0.0.rc1)
@@ -295,6 +307,7 @@ DEPENDENCIES
   capybara
   devise
   devise-i18n
+  devise-semantified!
   guard
   guard-livereload
   guard-rails
@@ -311,6 +324,7 @@ DEPENDENCIES
   redis (~> 4.0)
   rspec-rails (~> 3.8)
   sass-rails (~> 5.0)
+  selenium-webdriver
   shoulda-matchers (= 4.0.0.rc1)
   simple_form
   spring

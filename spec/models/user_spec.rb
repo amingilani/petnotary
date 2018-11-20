@@ -38,13 +38,9 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 
-class User < ApplicationRecord
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :confirmable, :lockable, :timeoutable, :trackable
+require 'rails_helper'
 
-  has_many :pets
-  has_one :profile
-
-  accepts_nested_attributes_for :pets
+RSpec.describe User, type: :model do
+  it { should accept_nested_attributes_for(:pets) }
+  it { should accept_nested_attributes_for(:profile) }
 end

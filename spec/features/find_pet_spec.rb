@@ -1,6 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature 'Find a pet', type: :feature do
+RSpec.feature 'Find a pet', type: :feature, js: true do
+  Capybara.current_driver = :selenium_chrome_headless
   scenario 'User creates a new organization and signs up' do
     # after signing in
     visit '/pets'

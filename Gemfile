@@ -19,6 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 
 group :development, :test do
+  gem 'devise-semantified', git: 'https://github.com/ajex13/devise-semantified.git'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara'
   gem 'guard'
@@ -27,6 +28,7 @@ group :development, :test do
   gem 'rails-controller-testing' # If you are using Rails 5.x
   gem 'rspec-rails', '~> 3.8'
   gem 'shoulda-matchers', '4.0.0.rc1'
+  gem 'selenium-webdriver'
 end
 
 group :development do

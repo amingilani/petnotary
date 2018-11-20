@@ -28,7 +28,19 @@ RSpec.describe PetsController, type: :controller do
   # Pet. As you add validations to Pet, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) do
-    skip('Add a hash of attributes valid for your model')
+    {
+      animal_name: 'animal_name',
+      animal_type: 'animal_type',
+      chip: 'chip',
+      profile: {
+        address: 'address',
+        city: 'city',
+        country: 'country',
+        name: 'name',
+        phone_number: 'phone_number',
+        state: 'state'
+      }
+    }
   end
 
   let(:invalid_attributes) do
