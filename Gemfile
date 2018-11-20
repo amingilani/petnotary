@@ -23,6 +23,7 @@ group :development, :test do
   gem 'capybara'
   gem 'guard'
   gem 'guard-rails', require: false
+  gem 'launchy'
   gem 'rails-controller-testing' # If you are using Rails 5.x
   gem 'rspec-rails', '~> 3.8'
   gem 'shoulda-matchers', '4.0.0.rc1'

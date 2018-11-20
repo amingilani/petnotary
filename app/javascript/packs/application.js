@@ -9,5 +9,7 @@
 
 console.log('Hello World from Webpacker')
 
-import 'bulma/css/bulma.min.css';
+import 'semantic-ui-css/semantic.min.js';
+import 'semantic-ui-css/semantic.min.css';
+
 import '@fortawesome/fontawesome-free/css/all.css'

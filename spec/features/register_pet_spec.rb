@@ -1,10 +1,9 @@
 require 'rails_helper'
 
-RSpec.feature 'organization sign up', type: :feature do
-  scenario 'User creates a new organization and signs up' do
+RSpec.feature 'Register a new pet', type: :feature do
+  scenario 'User creates a new pet registreation' do
     # after signing in
     visit '/pets/new'
-
     fill_in 'Tag', with: '012345678901234'
     fill_in 'Animal type', with: 'Dog'
     fill_in 'Animal name', with: 'Spike'
