@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.3'
 
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'country_select'
 gem 'devise'
 gem 'devise-i18n'
 gem 'haml-rails', '~> 1.0'
@@ -19,9 +20,11 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 
 group :development, :test do
-  gem 'devise-semantified', git: 'https://github.com/ajex13/devise-semantified.git'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'devise-semantified', git: 'https://github.com/ajex13/devise-semantified.git'
   gem 'capybara'
+  gem 'factory_bot_rails'
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   gem 'guard'
   gem 'guard-rails', require: false
   gem 'launchy'
