@@ -11,7 +11,8 @@ FactoryBot.define do
     phone_secondary { Faker::PhoneNumber.phone_number }
     postal_code { Faker::Address.postcode }
     province { Faker::Address.state }
-    password { Faker::Internet.password }
+    password { 'password' }
+    password_confirmation { 'password' }
 
     factory :user_with_pet do
       after(:create) { |user| create(:pet, user: user) }
