@@ -12,7 +12,7 @@
 
           %fieldset
             %legend Pet Information
-            = f.simple_fields_for :pet do |ff|
+            = f.simple_fields_for :pets_attributes do |ff|
               .field
                 = ff.input :chip_number
               .field
@@ -28,7 +28,7 @@
             = f.input :province
             = f.input :address
             = f.input :city
-          -# = f.input :country
+            = f.input :country, input_html: {class: 'ui selection dropdown'}
 
           %fieldset
             %legend Account

@@ -43,13 +43,13 @@ class PetsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pet
-      @pet = Pet.find_by(tag: params[:tag])
+      # @pet = Pet.find_by(chip_number: params[:chip_number])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_params
       params.require(:pet).permit(
-        :tag,
+        :chip_number,
         :animal_type,
         :animal_name,
         :owner_name,
