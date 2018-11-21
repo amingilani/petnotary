@@ -23,7 +23,6 @@ require 'rails_helper'
 
 RSpec.describe Pet, type: :model do
   it { should belong_to(:user) }
-
   it { should validate_presence_of(:chip_number) }
   it { should validate_presence_of(:species) }
 end

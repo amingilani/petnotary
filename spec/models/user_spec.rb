@@ -42,13 +42,29 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   it { should accept_nested_attributes_for(:pets) }
 
-  it { should validate_presence_of(:email) }
-  it { should validate_presence_of(:name) }
-  it { should validate_presence_of(:phone_primary) }
-  it { should validate_presence_of(:phone_secondary) }
-  it { should validate_presence_of(:postal_code) }
-  it { should validate_presence_of(:province) }
-  it { should validate_presence_of(:address) }
-  it { should validate_presence_of(:city) }
-  it { should validate_presence_of(:country) }
+  it { should validate_presence_of :email }
+  it { should validate_presence_of :name }
+  it { should validate_presence_of :phone_primary }
+  it { should validate_presence_of :phone_secondary }
+  it { should validate_presence_of :postal_code }
+  it { should validate_presence_of :province }
+  it { should validate_presence_of :address }
+  it { should validate_presence_of :city }
+  it { should validate_presence_of :country }
+
+  describe 'when a user is created' do
+    subject { -> { create :user } }
+    it { should_not raise_error }
+    it { should change(User, :count).by(1) }
+  end
+
+  describe 'when a user with a pet is created' do
+    subject { -> { create :user_with_pet } }
+    it { should change(Pet, :count).by(1) }
+  end
+
+  describe 'when a user with 5 pets is created' do
+    subject { -> { create :user_with_pets } }
+    it { should change(Pet, :count).by(5) }
+  end
 end
