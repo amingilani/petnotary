@@ -6,15 +6,16 @@
         %i.signup.icon>
         Register
       %div{:class => "ui form #{"error" if resource.errors.any?}"}
-        = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = simple_form_for(@user, as: resource_name, url: registration_path(resource_name)) do |f|
           .ui.error.message
             = devise_error_messages!
 
           %fieldset
             %legend Pet Information
-            = f.simple_fields_for :pets_attributes do |ff|
+            - @user.pets.build
+            = f.simple_fields_for :pets do |ff|
               .field
-                = ff.input :chip_number
+                = ff.input :chip_number, input_html: {value: @chip_number}
               .field
                 = ff.input :name, required: false
               .field
@@ -53,3 +54,4 @@
         .ui.horizontal.divider or
         .ui.celled.horizontal.list
           = render "devise/shared/links"
+          = console

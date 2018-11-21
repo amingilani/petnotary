@@ -43,17 +43,16 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :timeoutable, :trackable
 
-  has_many :pets
-
+  has_many :pets, inverse_of: :user, dependent: :destroy
   accepts_nested_attributes_for :pets
 
-  validates_presence_of :email
-  validates_presence_of :name
-  validates_presence_of :phone_primary
-  validates_presence_of :phone_secondary
-  validates_presence_of :postal_code
-  validates_presence_of :province
-  validates_presence_of :address
-  validates_presence_of :city
-  validates_presence_of :country
+  validates :email, presence: true
+  validates :name, presence: true
+  validates :phone_primary, presence: true
+  validates :phone_secondary, presence: true
+  validates :postal_code, presence: true
+  validates :province, presence: true
+  validates :address, presence: true
+  validates :city, presence: true
+  validates :country, presence: true
 end
