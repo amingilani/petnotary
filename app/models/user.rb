@@ -44,7 +44,6 @@ class User < ApplicationRecord
          :confirmable, :lockable, :timeoutable, :trackable
 
   has_many :pets
-  has_one :profile
 
   accepts_nested_attributes_for :pets
 

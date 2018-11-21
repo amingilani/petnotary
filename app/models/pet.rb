@@ -25,9 +25,8 @@ class Pet < ApplicationRecord
   validates :chip_number, presence: true
 
   belongs_to :user
-  has_one :profile, through: :user
 
   def to_param
-    tag
+    chip_number
   end
 end
