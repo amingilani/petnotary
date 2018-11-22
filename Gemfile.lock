@@ -94,6 +94,7 @@ GEM
       countries (~> 2.0)
       sort_alphabetical (~> 1.0)
     crass (1.0.4)
+    database_cleaner (1.7.0)
     devise (4.5.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -334,6 +335,7 @@ DEPENDENCIES
   byebug
   capybara
   country_select
+  database_cleaner
   devise
   devise-i18n
   devise-semantified!

@@ -6,8 +6,7 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    @chip_number = params[:pets][:chip_number]
-    byebug
+    @chip_number = params[:chip_number]
     @user = User.new
     super
   end
@@ -58,11 +57,13 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
-  #   super(resource)
+  #   return super(resource) if resource.pets.blank?
+  #   redirect_to pets_path(resource.pets.first)
   # end
 
   # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_inactive_sign_up_path_for(resource)
+    return super(resource) if resource.pets.blank?
+    pet_path(resource.pets.first)
+  end
 end

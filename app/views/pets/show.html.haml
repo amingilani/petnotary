@@ -106,61 +106,43 @@
         Pet Information
       %p
         %b Chip number:
-        123456789012345
+        = @pet.chip_number
       %p
         %b Species:
-        Dog
+        = @pet.species
       %p
         %b Name:
-        Aegon
+        = @pet.name
     .ui.segment.inverted.green
       %h2.ui.header
         Owner Information
       %p
-        %b Chip number:
-        123456789012345
-      %p
-        %b Species:
-        Dog
-
         %b Name:
-        Aegon
-      %p
-        %b Name:
-        =# @pet.user.name
-        Amin Shah Gilani
+        = @pet.user.name
       %p
         %b Email:
-        =# @pet.user.email
-        amin@gilani.me
+        = @pet.user.email
       %p
         %b Primary Phone:
-        =# @pet.user.phone_primary
-        +923454007755
+        = @pet.user.phone_primary
       %p
         %b Secondary Phone:
-        =# @pet.user.phone_secondary
-        +923454007755
+        = @pet.user.phone_secondary
       %p
         %b Postal Code:
-        =# @pet.user.postal_code
-        234234
+        = @pet.user.postal_code
       %p
         %b Province:
-        =# @pet.user.province
-        Punjab
+        = @pet.user.province
       %p
         %b Address:
-        =# @pet.user.address
-        324-B JT B
+        = @pet.user.address
       %p
         %b City:
-        =# @pet.user.city
-        Lahore
+        = @pet.user.city
       %p
         %b Country:
-        =# @pet.user.country
-        Pakistan
+        = @pet.user.country
 
   .ui.inverted.vertical.footer.segment
     .ui.container

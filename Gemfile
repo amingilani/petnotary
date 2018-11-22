@@ -36,6 +36,7 @@ end
 
 group :development do
   gem 'annotate', git: 'https://github.com/ctran/annotate_models.git'
+  gem 'database_cleaner'
   gem 'guard-livereload'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rack-livereload'

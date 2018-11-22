@@ -108,12 +108,11 @@
         Pakistan's
         %strong only public
         pet microchip database
-      = form_for(:pets, url: new_registration_path(:user), method: :get, html: {class: 'ui action input'}) do |f|
-        = f.text_field(:chip_number, placeholder: 'Chip Number', class: 'ui')
-        = f.button(class: 'ui huge primary button') do
+      = form_tag(new_registration_path(:user), method: :get, class: 'ui action input') do
+        = text_field_tag(:chip_number, nil, {placeholder: 'Chip Number', class: 'ui'})
+        = button_tag(:register, class: 'ui huge primary button') do
           Register
           %i.right.arrow.icon
-
     .ui.container.top.space
       .ui.three.column.stackable.grid.centered
         .ui.column.center.aligned

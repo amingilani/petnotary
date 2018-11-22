@@ -11,17 +11,17 @@
             = devise_error_messages!
 
           %fieldset
-            %legend Pet Information
+            %legend Pet Information (Optional)
             - @user.pets.build
             = f.simple_fields_for :pets do |ff|
               .field
-                = ff.input :chip_number, input_html: {value: @chip_number}
+                = ff.input :chip_number, input_html: {value: @chip_number}, required: false
               .field
                 = ff.input :name, required: false
               .field
-                = ff.input :species
+                = ff.input :species, required: false
           %fieldset
-            %legend Emergency Contact Information
+            %legend Emergency Contact Information (Required)
             = f.input :name
             = f.input :phone_primary
             = f.input :phone_secondary
@@ -32,7 +32,7 @@
             = f.input :country, input_html: {class: 'ui selection dropdown'}
 
           %fieldset
-            %legend Account
+            %legend Account Details (Required)
             .field
               = f.label :email
               = f.email_field :email, autofocus: true ,placeholder: "john@example.com"
@@ -49,9 +49,8 @@
               = f.label :password_confirmation
               = f.password_field :password_confirmation, autocomplete: "off" ,placeholder: "Confirm Password"
             .ui.left.icon.input
-              = f.submit "Sign up" ,class: "ui submit button primary "
+              = f.submit "Register" ,class: "ui submit button primary "
               %i.users.icon
         .ui.horizontal.divider or
         .ui.celled.horizontal.list
           = render "devise/shared/links"
-          = console
