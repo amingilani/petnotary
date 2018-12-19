@@ -1,5 +1,5 @@
 {
-  "name": "petnoter",
+  "name": "petnotary",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.4.2",

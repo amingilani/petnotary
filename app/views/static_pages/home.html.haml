@@ -3,7 +3,7 @@
     .ui.huge.borderless.menu.inverted.header
       .ui.container
         = link_to root_path, class: 'item header' do
-          PetNoter
+          PetNotary
         .right.menu
         - if user_signed_in?
           = link_to pets_find_path do
@@ -56,16 +56,16 @@
       .three.wide.column
         %h4.ui.inverted.header Contact
         .ui.inverted.link.list
-          %a.item{:href => "mailto:feedback.petnoter@gilani.me"}
+          %a.item{:href => "mailto:feedback.petnotary@gilani.me"}
             %i.envelope.outline.icon
             Feedback
-          %a.item{:href => "mailto:partnerships.petnoter@gilani.me"}
+          %a.item{:href => "mailto:partnerships.petnotary@gilani.me"}
             %i.envelope.outline.icon
             Partnerships
-          %a.item{:href => "mailto:dataedit.petnoter@gilani.me"}
+          %a.item{:href => "mailto:dataedit.petnotary@gilani.me"}
             %i.envelope.outline.icon
             Data Modification
-          %a.item{:href => "mailto:support.petnoter@gilani.me"}
+          %a.item{:href => "mailto:support.petnotary@gilani.me"}
             %i.envelope.outline.icon
             Support
       .seven.wide.column
