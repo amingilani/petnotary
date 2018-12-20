@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start 'rails'
+
 require 'spec_helper'
 require 'database_cleaner'
 ENV['RAILS_ENV'] ||= 'test'

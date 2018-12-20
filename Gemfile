@@ -45,5 +45,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
+gem 'simplecov', require: false, group: :test
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data'
