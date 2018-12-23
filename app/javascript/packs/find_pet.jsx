@@ -33,13 +33,12 @@ class FindForm extends Component {
   render() {
     return (
 
-
-
-
       <div className="ui field">
         <div className="ui input">
-          <label for="pet_tag">Tag</label>
-          <input type="text" name="pet[tag]" id="pet_tag" value={this.state.tag} onChange={this.handleChange}/>
+          <form>
+            <label for="pet_tag">Tag</label>
+            <input type="text" name="pet[tag]" id="pet_tag" value={this.state.tag} onChange={this.handleChange}/>
+          </form>
         </div>
         <FindButton tag={this.state.tag}/>
       </div>
