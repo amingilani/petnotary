@@ -1,0 +1,37 @@
+= form_for @pet do |f|
+  - if @pet.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@pet.errors.count, "error")} prohibited this pet from being saved:"
+      %ul
+        - @pet.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :chip_number
+    = f.text_field :chip_number
+  .field
+    = f.label :animal_type
+    = f.text_field :animal_type
+  .field
+    = f.label :animal_name
+    = f.text_field :animal_name
+  .field
+    = f.label :owner_name
+    = f.text_field :owner_name
+  .field
+    = f.label :owner_email
+    = f.text_field :owner_email
+  .field
+    = f.label :owner_email_confirmation
+    = f.text_field :owner_email_confirmation
+  .field
+    = f.label :owner_password
+    = f.text_field :owner_password
+  .field
+    = f.label :owner_password_confirmation
+    = f.text_field :owner_password_confirmation
+  .field
+    = f.label :owner_phone
+    = f.text_field :owner_phone
+  .actions
+    = f.submit 'Save'
