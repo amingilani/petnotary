@@ -44,6 +44,9 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
+    params[:user].delete(:pets_attributes) if params[:user].has_key?(:pets_attributes) &&
+      !params[:user][:pets_attributes].blank? &&
+      params[:user][:pets_attributes]['0']['chip_number'].blank?
     devise_parameter_sanitizer.permit(:sign_up){ |u|
       u.permit(:email, :password, :password_confirmation, :name, :phone_primary, :phone_secondary, :postal_code,
               :province, :address, :city, :country, pets_attributes: [:chip_number, :name, :species])

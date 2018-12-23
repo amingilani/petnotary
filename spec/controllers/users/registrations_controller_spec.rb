@@ -4,6 +4,13 @@ RSpec.describe User::RegistrationsController, type: :controller do
   before(:each) do
     @request.env['devise.mapping'] = Devise.mappings[:user]
   end
+
+  let(:valid_attributes_and_empty_pet) do
+    user = attributes_for :user
+    user[:pets_attributes] = { 0 => {"chip_number"=>"", "name"=>"", "species"=>"" } }
+    user
+  end
+
   let(:valid_attributes) do
     user = attributes_for :user
     user
@@ -11,7 +18,7 @@ RSpec.describe User::RegistrationsController, type: :controller do
 
   let(:valid_attributes_and_pet) do
     user = attributes_for :user
-    user[:pets_attributes] = [attributes_for(:pet)]
+    user[:pets_attributes] = { 0 => attributes_for(:pet) }
     user
   end
 
@@ -24,6 +31,12 @@ RSpec.describe User::RegistrationsController, type: :controller do
   describe 'POST #create' do
     context 'with valid params and without a pet' do
       subject { -> { post :create, params: { user: valid_attributes } } }
+      it { should change(User, :count).by(1) }
+      it { should change(Pet, :count).by(0) }
+    end
+
+    context 'with valid params and without a pet' do
+      subject { -> { post :create, params: { user: valid_attributes_and_empty_pet } } }
       it { should change(User, :count).by(1) }
       it { should change(Pet, :count).by(0) }
     end
