@@ -10,19 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_20_183320) do
+ActiveRecord::Schema.define(version: 2018_12_24_010444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "pets", force: :cascade do |t|
     t.string "chip_number", null: false
-    t.string "species", null: false
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.integer "privacy_settings", default: 0
+    t.integer "species", null: false
+    t.string "primary_breed"
+    t.string "secondary_breed"
+    t.string "primary_color"
+    t.string "secondary_color"
+    t.boolean "mixed_breed", default: true
     t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
