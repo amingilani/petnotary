@@ -21,6 +21,7 @@
 #  phone_primary          :string
 #  phone_secondary        :string
 #  postal_code            :string
+#  privacy_settings       :integer          default(0)
 #  province               :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime

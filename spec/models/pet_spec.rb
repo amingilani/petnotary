@@ -2,13 +2,19 @@
 #
 # Table name: pets
 #
-#  id          :bigint(8)        not null, primary key
-#  chip_number :string           not null
-#  name        :string
-#  species     :string           not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  user_id     :bigint(8)
+#  id               :bigint(8)        not null, primary key
+#  chip_number      :string           not null
+#  mixed_breed      :boolean          default(TRUE)
+#  name             :string
+#  primary_breed    :string
+#  primary_color    :string
+#  privacy_settings :integer          default(0)
+#  secondary_breed  :string
+#  secondary_color  :string
+#  species          :integer          not null
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  user_id          :bigint(8)
 #
 # Indexes
 #

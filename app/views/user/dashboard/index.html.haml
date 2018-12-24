@@ -1,1 +1,97 @@
-%h2 dashboard
+= render partial: "shared/header"
+
+.ui.container
+  %h2.ui.header Dashboard
+
+  .ui.segment
+    %p.ui.header
+      Welcome
+      = current_user.name
+
+    %p
+      %strong Please ensure your contact information is up-to date!
+
+    .ui.segment
+      %p
+        %strong Legal name:
+        %em= current_user.name
+      %p
+        %strong Email:
+        = current_user.email
+      %p
+        %strong Phone numbers:
+        %ul
+          %li
+            %strong Primary
+            %br
+            = current_user.phone_primary
+          %li
+            %strong Secondary
+            %br
+            = current_user.phone_secondary
+      %p
+        %strong Mailing Address:
+        %br
+        = current_user.address
+        %br
+        = "#{current_user.city}, #{current_user.postal_code}"
+        %br
+        = "#{current_user.province}, #{current_user.country}"
+      = link_to 'Update profile', edit_user_registration_path, class: ' ui button'
+
+  %h3 Your Pets
+
+  .ui.placeholder.segment
+    .ui.icon.header
+      %i.paw.icon
+      You don't have any pets yet!
+    .ui.green.button Add a new pet
+
+  .ui.link.cards
+    .card
+      .image
+        %img{:src => "https://via.placeholder.com/500"}/
+      .content
+        .header Matt Giampietro
+        .meta
+          %a Canine
+        .description
+          Matthew is an interior designer living in New York.
+      .extra.content
+        %span.right.floated
+          Joined in 2013
+        %span
+          %i.user.icon
+          75 Friends
+    .card
+      .image
+        %img{:src => "https://via.placeholder.com/500"}/
+      .content
+        .header Feline
+        .meta
+          %span.date Coworker
+        .description
+          Molly is a personal assistant living in Paris.
+      .extra.content
+        %span.right.floated
+          Joined in 2011
+        %span
+          %i.user.icon
+          35 Friends
+    .card
+      .image
+        %img{:src => "https://via.placeholder.com/500"}/
+      .content
+        .header Avian
+        .meta
+          %a Coworker
+        .description
+          Elyse is a copywriter working in New York.
+      .extra.content
+        %span.right.floated
+          Joined in 2014
+        %span
+          %i.user.icon
+          151 Friends
+
+  %p.ui.green.button Add a new pet

@@ -1,0 +1,21 @@
+.ui.inverted.vertical.center.aligned.segment
+  .ui.container.fluid
+    .ui.huge.borderless.menu.inverted.header
+      .ui.container
+        = link_to root_path, class: 'item header' do
+          PetNotary
+        .right.menu
+        - if user_signed_in?
+          = link_to pets_find_path do
+            .ui.inverted.button.green Find an owner
+          = link_to pets_path do
+            .ui.inverted.button.violet Your pets
+          = link_to edit_user_registration_path do
+            .ui.inverted.button Settings
+          = link_to destroy_user_session_path, method: :delete do
+            .ui.inverted.button.red Sign out
+        - else
+          = link_to pets_find_path do
+            .ui.item.inverted.button.green Find an owner
+          = link_to new_user_session_path do
+            .ui.item.inverted.button.blue Login
